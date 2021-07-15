@@ -1,0 +1,14 @@
+{{range .Items}}
+<div style="border: 1px solid black; float: left; width: 292px; height: 330px;">
+    <p style="text-align: center">
+        <font color="{{if .PriceChangePositive}}green{{else}}red{{end}}">
+            <font size="4"><b>{{.Symbol}}</b></font> <font size="2">({{.StockName}})</font></br>
+            <font size="3"><b>Price: {{.CurrentPrice}} ({{.PriceChange}}, {{.PriceChangePercent}})</b></font>
+        </font></br>
+        <a href="https://finance.yahoo.com/chart/{{.Symbol}}" target="_blank"><img src="/chartimg/{{.Symbol}}/1mo/1d" width="290px"></a>
+    </p>
+</div>
+{{end}}
+<script type = "text/JavaScript">
+    AutoRefresh(1000 * 60); // refresh every 1 min
+</script>
