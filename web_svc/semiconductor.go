@@ -8,7 +8,7 @@ import (
 
 func (svc *WebSVC) getSemiconductorHTMLHandler(w http.ResponseWriter, r *http.Request) {
 	logger := log.WithFields(log.Fields{
-		"package":  "web_svc",
+		"package":  "WebSVC",
 		"function": "getSemiconductorHTMLHandler",
 	})
 

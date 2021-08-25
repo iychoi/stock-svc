@@ -52,8 +52,16 @@ func main() {
 	defer priceSVC.Close()
 	log.Info("Price Service Started")
 
+	log.Info("Starting Feer & Greed Index Service...")
+	feerGreedSVC, err := finance_svc.InitFearGreedIndexSVC()
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer feerGreedSVC.Close()
+	log.Info("Price Feer & Greed Index  Started")
+
 	log.Info("Starting Web Service...")
-	webSVC, err := web_svc.InitWebSVC(timeSVC, chartSVC, priceSVC)
+	webSVC, err := web_svc.InitWebSVC(timeSVC, chartSVC, priceSVC, feerGreedSVC)
 	if err != nil {
 		log.Fatal(err)
 	}

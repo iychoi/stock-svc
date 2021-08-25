@@ -30,7 +30,7 @@ type TemplateStockChartItems struct {
 // renderChartMapHTML ...
 func (svc *WebSVC) renderChartMapHTML(chartItems []string, w io.Writer) error {
 	logger := log.WithFields(log.Fields{
-		"package":  "web_svc",
+		"package":  "WebSVC",
 		"function": "renderChartMapHTML",
 	})
 
@@ -97,7 +97,7 @@ func (svc *WebSVC) renderChartMapHTML(chartItems []string, w io.Writer) error {
 // renderChartMapDetailHTML ...
 func (svc *WebSVC) renderChartMapDetailHTML(chartItems []string, w io.Writer) error {
 	logger := log.WithFields(log.Fields{
-		"package":  "web_svc",
+		"package":  "WebSVC",
 		"function": "renderChartMapDetailHTML",
 	})
 

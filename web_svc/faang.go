@@ -8,7 +8,7 @@ import (
 
 func (svc *WebSVC) getFaangHTMLHandler(w http.ResponseWriter, r *http.Request) {
 	logger := log.WithFields(log.Fields{
-		"package":  "web_svc",
+		"package":  "WebSVC",
 		"function": "getFaangHTMLHandler",
 	})
 
@@ -26,15 +26,15 @@ func (svc *WebSVC) getFaangHTMLHandler(w http.ResponseWriter, r *http.Request) {
 
 	// Tickers?
 	chartItems := []string{
+		"GOOG",
 		"FB",
 		"AMZN",
 		"AAPL",
-		"NFLX",
-		"GOOG",
-		"BABA",
-		"BIDU",
 		"NVDA",
 		"TSLA",
+		"NFLX",
+		"BABA",
+		"BIDU",
 		"TWTR",
 	}
 

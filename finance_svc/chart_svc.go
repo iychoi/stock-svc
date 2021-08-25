@@ -113,7 +113,7 @@ func (svc *ChartSVC) Close() error {
 // GetChartData ...
 func (svc *ChartSVC) GetChartData(symbol string, period ChartPeriod, interval ChartInterval) ([]byte, error) {
 	logger := log.WithFields(log.Fields{
-		"package":  "chart_svc",
+		"package":  "ChartSVC",
 		"function": "GetChartData",
 	})
 
@@ -133,7 +133,7 @@ func (svc *ChartSVC) GetChartData(symbol string, period ChartPeriod, interval Ch
 // RequestChart ...
 func (svc *ChartSVC) RequestChart(symbol string, period ChartPeriod, interval ChartInterval) error {
 	logger := log.WithFields(log.Fields{
-		"package":  "chart_svc",
+		"package":  "ChartSVC",
 		"function": "RequestChart",
 	})
 
@@ -174,7 +174,7 @@ func (svc *ChartSVC) renewChartCache(symbol string, period ChartPeriod, interval
 
 func (svc *ChartSVC) renewCharts() {
 	logger := log.WithFields(log.Fields{
-		"package":  "chart_svc",
+		"package":  "ChartSVC",
 		"function": "renewCharts",
 	})
 
@@ -189,7 +189,7 @@ func (svc *ChartSVC) renewCharts() {
 
 func (svc *ChartSVC) renewChartsMinutes() {
 	logger := log.WithFields(log.Fields{
-		"package":  "chart_svc",
+		"package":  "ChartSVC",
 		"function": "renewChartsMinutes",
 	})
 
@@ -206,7 +206,7 @@ func (svc *ChartSVC) renewChartsMinutes() {
 
 func (svc *ChartSVC) renewChartsDays() {
 	logger := log.WithFields(log.Fields{
-		"package":  "chart_svc",
+		"package":  "ChartSVC",
 		"function": "renewChartsDays",
 	})
 
@@ -223,7 +223,7 @@ func (svc *ChartSVC) renewChartsDays() {
 
 func (svc *ChartSVC) makeChart(symbol string, period ChartPeriod, interval ChartInterval, updateCache bool) error {
 	logger := log.WithFields(log.Fields{
-		"package":  "chart_svc",
+		"package":  "ChartSVC",
 		"function": "makeChart",
 	})
 
@@ -279,7 +279,7 @@ func (svc *ChartSVC) makeChartFileName(symbol string, period ChartPeriod, interv
 
 func (svc *ChartSVC) executeScript(bin string, args []string) ([]byte, error) {
 	logger := log.WithFields(log.Fields{
-		"package":  "chart_svc",
+		"package":  "ChartSVC",
 		"function": "executeScript",
 	})
 

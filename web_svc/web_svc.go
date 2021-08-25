@@ -22,27 +22,29 @@ const (
 
 // Server ...
 type WebSVC struct {
-	Router       *mux.Router
-	TimeService  *finance_svc.TimeSVC
-	ChartService *finance_svc.ChartSVC
-	PriceService *finance_svc.PriceSVC
+	Router                *mux.Router
+	TimeService           *finance_svc.TimeSVC
+	ChartService          *finance_svc.ChartSVC
+	PriceService          *finance_svc.PriceSVC
+	FeerGreedIndexService *finance_svc.FearGreedIndexSVC
 
 	WebServer *http.Server
 }
 
 // InitWebSVC ...
-func InitWebSVC(timeService *finance_svc.TimeSVC, chartService *finance_svc.ChartSVC, priceService *finance_svc.PriceSVC) (*WebSVC, error) {
+func InitWebSVC(timeService *finance_svc.TimeSVC, chartService *finance_svc.ChartSVC, priceService *finance_svc.PriceSVC, feerGreedService *finance_svc.FearGreedIndexSVC) (*WebSVC, error) {
 	logger := log.WithFields(log.Fields{
-		"package":  "web_svc",
+		"package":  "WebSVC",
 		"function": "InitWebSVC",
 	})
 
 	webSVC := &WebSVC{
-		Router:       mux.NewRouter(),
-		TimeService:  timeService,
-		ChartService: chartService,
-		PriceService: priceService,
-		WebServer:    nil,
+		Router:                mux.NewRouter(),
+		TimeService:           timeService,
+		ChartService:          chartService,
+		PriceService:          priceService,
+		FeerGreedIndexService: feerGreedService,
+		WebServer:             nil,
 	}
 
 	webSVC.addHandlers()
@@ -67,7 +69,7 @@ func InitWebSVC(timeService *finance_svc.TimeSVC, chartService *finance_svc.Char
 // Close ...
 func (svc *WebSVC) Close() error {
 	logger := log.WithFields(log.Fields{
-		"package":  "web_svc",
+		"package":  "WebSVC",
 		"function": "Close",
 	})
 
@@ -94,12 +96,14 @@ func (svc *WebSVC) addHandlers() {
 
 	// stock images
 	svc.Router.HandleFunc("/chartimg/{symbol}/{period}/{interval}", svc.getChartImageHandler).Methods("GET")
+	// index images
+	svc.Router.HandleFunc("/indeximg/{index}", svc.getIndexImageHandler).Methods("GET")
 }
 
 // writeHTMLHeader ...
 func (svc *WebSVC) writeHTMLHeader(w io.Writer) error {
 	logger := log.WithFields(log.Fields{
-		"package":  "web_svc",
+		"package":  "WebSVC",
 		"function": "writeHTMLHeader",
 	})
 
@@ -121,7 +125,7 @@ func (svc *WebSVC) writeHTMLHeader(w io.Writer) error {
 // writeHTMLFooter ...
 func (svc *WebSVC) writeHTMLFooter(w io.Writer) error {
 	logger := log.WithFields(log.Fields{
-		"package":  "web_svc",
+		"package":  "WebSVC",
 		"function": "writeHTMLFooter",
 	})
 

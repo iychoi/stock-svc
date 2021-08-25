@@ -8,7 +8,7 @@ import (
 
 func (svc *WebSVC) getGrowthHTMLHandler(w http.ResponseWriter, r *http.Request) {
 	logger := log.WithFields(log.Fields{
-		"package":  "web_svc",
+		"package":  "WebSVC",
 		"function": "getGrowthHTMLHandler",
 	})
 

@@ -38,7 +38,7 @@ type TimeSVC struct {
 
 func InitTimeSVC() (*TimeSVC, error) {
 	logger := log.WithFields(log.Fields{
-		"package":  "Time_svc",
+		"package":  "TimeSVC",
 		"function": "InitTimeSVC",
 	})
 
@@ -109,7 +109,7 @@ func (svc *TimeSVC) ToPhoenix(t time.Time) time.Time {
 // GetMarketType ...
 func (svc *TimeSVC) GetMarketType(t time.Time) MarketType {
 	logger := log.WithFields(log.Fields{
-		"package":  "Time_svc",
+		"package":  "TimeSVC",
 		"function": "GetMarketType",
 	})
 

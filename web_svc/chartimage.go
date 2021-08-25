@@ -10,7 +10,7 @@ import (
 
 func (svc *WebSVC) getChartImageHandler(w http.ResponseWriter, r *http.Request) {
 	logger := log.WithFields(log.Fields{
-		"package":  "web_svc",
+		"package":  "WebSVC",
 		"function": "getChartImageHandler",
 	})
 

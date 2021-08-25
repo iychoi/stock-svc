@@ -8,7 +8,7 @@ import (
 
 func (svc *WebSVC) getFutureHTMLHandler(w http.ResponseWriter, r *http.Request) {
 	logger := log.WithFields(log.Fields{
-		"package":  "web_svc",
+		"package":  "WebSVC",
 		"function": "getFutureHTMLHandler",
 	})
 

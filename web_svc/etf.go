@@ -8,7 +8,7 @@ import (
 
 func (svc *WebSVC) getEtfHTMLHandler(w http.ResponseWriter, r *http.Request) {
 	logger := log.WithFields(log.Fields{
-		"package":  "web_svc",
+		"package":  "WebSVC",
 		"function": "getEtfHTMLHandler",
 	})
 
@@ -34,19 +34,17 @@ func (svc *WebSVC) getEtfHTMLHandler(w http.ResponseWriter, r *http.Request) {
 		"URTY",
 		"TECL",
 		"LABU",
-		"FAS",
+		"BNKU",
 		"ICLN",
 		"CURE",
 		"KRBN",
+		"JETS",
 		"NRGU",
 		"RETL",
 		"DFEN",
 		"KORU",
-		"LIT",
-		"ERX",
 		"NAIL",
 		"TPOR",
-		"DUSL",
 		"VTV",
 		"DRN",
 		"XLB",

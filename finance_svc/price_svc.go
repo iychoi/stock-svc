@@ -53,7 +53,7 @@ func (svc *PriceSVC) Close() error {
 // GetStockInfo ...
 func (svc *PriceSVC) GetStockInfo(symbol string) (*StockInfo, error) {
 	logger := log.WithFields(log.Fields{
-		"package":  "price_svc",
+		"package":  "PriceSVC",
 		"function": "GetStockInfo",
 	})
 
@@ -94,7 +94,7 @@ func (svc *PriceSVC) GetStockInfo(symbol string) (*StockInfo, error) {
 
 func (svc *PriceSVC) getStockInfo(symbol string) (*StockInfo, error) {
 	logger := log.WithFields(log.Fields{
-		"package":  "price_svc",
+		"package":  "PriceSVC",
 		"function": "getStockInfo",
 	})
 

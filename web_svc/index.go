@@ -8,7 +8,7 @@ import (
 
 func (svc *WebSVC) getIndexHTMLHandler(w http.ResponseWriter, r *http.Request) {
 	logger := log.WithFields(log.Fields{
-		"package":  "web_svc",
+		"package":  "WebSVC",
 		"function": "getIndexHTMLHandler",
 	})
 
@@ -38,13 +38,13 @@ func (svc *WebSVC) getIndexHTMLHandler(w http.ResponseWriter, r *http.Request) {
 		"ETH-USD",
 		"FNGU",
 		"SOXL",
+		"BNKU",
 		"TQQQ",
 		"UPRO",
 		"URTY",
 		"TECL",
 		"LABU",
 		"ICLN",
-		"UVXY",
 	}
 
 	err = svc.renderChartMapHTML(chartItems, w)
